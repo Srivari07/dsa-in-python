@@ -1,39 +1,21 @@
 t = int(input())
-while t > 0:
-    n = int(input())
+for _ in range(t):
+    n = list(map(str, input().split()))
+    s = list(map(int, input().split()))
+    r = list(map(int, input().split()))
+    total = [s[i]+r[i] for i in range(len(s))]
+    m = dict(zip(n, total))
+    d = dict(zip(n, s))
+    d = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+    currMax = max(m, key=m.get)
+    for i, k in enumerate(d):
+        if currMax == k:
+            print(k, i)
 
-    def isComposite(n):
-        if (n <= 1):
-            return False
-        if (n <= 3):
-            return False
-        if (n % 2 == 0 or n % 3 == 0):
-            return True
-        i = 5
-        while(i * i <= n):
-            if (n % i == 0 or n % (i + 2) == 0):
-                return True
-            i = i + 6
-        return False
-
-    def isPrime(n):
-        if n > 1:
-            for i in range(2, int(n/2)+1):
-                if (n % i) == 0:
-                    return False
-                    break
-            else:
-                return True
-        else:
-            return False
-
-    if isComposite(n) == True and isPrime(n) == True:
-        for num in range(2, n + 1):
-            if num > 1:
-                for i in range(2, num):
-                    if (num % i) == 0:
-                        break
-                else:
-                    print(num)
-
-    t -= 1
+# 2
+# Hari Hara Sudhan Thevar
+# 86 1 72 18
+# 79 45 4 57
+# Hari Hara Sudhan Thevar
+# 63 45 42 54
+# 11 31 61 83
