@@ -44,15 +44,14 @@
 
 
 # subset
-l = [1, 2, 3]
+arr = [1, 2, 3]
 
 
-def fun(l):
+def fun(arr):
     outer = [[]]
-    for i in range(len(l)+1):
-        for j in range(i):
-            outer.append(l[j:i])
+    for i in sorted(arr):
+        outer += [j+[i] for j in outer]
     return outer
 
 
-print(fun(l))
+print(fun(arr))

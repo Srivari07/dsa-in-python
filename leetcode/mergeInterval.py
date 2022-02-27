@@ -19,3 +19,4 @@ def mergeInterval(intervals):
 
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 print(mergeInterval(intervals))
+# print(sorted(intervals))
