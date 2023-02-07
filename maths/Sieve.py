@@ -1,23 +1,23 @@
 
 
 # Sieve of Eratosthenes
+# TC : O(n log(log(n))
 
-'''
-https://www.geeksforgeeks.org/sieve-of-eratosthenes/
-'''
-# false means the no. in array is prime
+def foo(n):
+    arr=[]
+    dp=[True]*(n+1)
+    
+    for i in range(2,int(n**0.5)+1):
+        if dp[i]==True:
+            for j in range(i*i,n+1,i):
+                dp[j]=False
+
+    for i in range(2,n+1):
+        if dp[i]==True:
+            arr.append(i)
+            
+    return arr
 
 
-def sieve(n, primes):
-    for i in range(2, n):
-        if (primes[i] == False):
-            for j in range(i*2, n, i):
-                primes[j] = True
-    for i in range(2, n):
-        if(primes[i] == False):
-            print(i, end=" ")
-
-
-n = 40
-primes = [False for i in range(n+1)]
-sieve(n, primes)
+n = 10**6
+print(foo(n))
