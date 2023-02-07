@@ -1,8 +1,4 @@
 
-
-from re import S
-
-
 class SegmentTree:
     def __init__(self,arr) -> None:
         self.n=len(arr)
