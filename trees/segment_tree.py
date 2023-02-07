@@ -1,8 +1,4 @@
 
-
-from re import S
-
-
 class SegmentTree:
     def __init__(self,arr) -> None:
         self.n=len(arr)
@@ -71,5 +67,3 @@ Time Complexities:
 
 Auxiliary Space: O(2*N)/O(4n)
 '''
-
-        
