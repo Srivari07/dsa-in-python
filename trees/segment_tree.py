@@ -48,7 +48,7 @@ class SegmentTree:
             self.update(2 * node + 2, mid + 1, end, idx, value)
         self.tree[node]=self.tree[2*node+1]+self.tree[2*node+2]
 
-arr=[2,3,4,1,5]
+arr=[1,3,5]
 n=len(arr)
 node=0 # idx of node
 start=0
