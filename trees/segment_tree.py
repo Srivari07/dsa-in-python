@@ -55,9 +55,9 @@ start=0
 end=n-1
 
 st=SegmentTree(arr)
-print(st.query(node,start,end,1,3))
+print(st.query(node,start,end,1,3)) # 8
 st.update(node,start,end,2,3)
-print(st.query(node, start, end, 1, 3))
+print(st.query(node, start, end, 1, 3)) # 7
 
 '''
 Time Complexities:
