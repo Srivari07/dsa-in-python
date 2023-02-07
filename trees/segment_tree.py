@@ -5,7 +5,7 @@ class SegmentTree:
         self.tree = [0]*(4*self.n)    # SC:O(4n)
         self.build(arr,0,0,self.n-1)
 
-    # node = idx of node in tree [0 to n]
+    # node = idx of node in tree [0 to 4n]
     def build(self,arr,node,start,end):
         # at leaf node
         if start==end:
