@@ -1,12 +1,12 @@
 class DisjointSet:
-    rank=[]
     parent=[]
     size=[]
+    rank=[]
 
     def __init__(self, n) -> None:
+        self.parent = [i for i in range(n+1)]
+        self.size = [1 for _ in range(n+1)]
         self.rank=[0]*(n+1)
-        self.parent=[i for i in range(0,n+1)]
-        self.size = [1]*(n+1)
 
     def findParent(self, node):
         if node==self.parent[node]:
@@ -19,6 +19,9 @@ class DisjointSet:
         ulp_u=self.findParent(u)
         ulp_v=self.findParent(v)
 
+        if ulp_u == ulp_v:
+            return
+
         if self.rank[ulp_u]<self.rank[ulp_v]:
             self.parent[ulp_u]=ulp_v
 
@@ -28,7 +31,7 @@ class DisjointSet:
         else:
             self.parent[ulp_v] = ulp_u
             self.rank[ulp_u]+=1
-
+    
     def unionBySize(self, u, v):
         ulp_u = self.findParent(u)
         ulp_v = self.findParent(v)
@@ -63,4 +66,4 @@ if obj.findParent(1) == obj.findParent(0):
     print('Yes')
 else:
     print('No')
-    
+        
